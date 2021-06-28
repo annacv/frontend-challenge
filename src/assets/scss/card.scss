@@ -1,0 +1,96 @@
+.card {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 1rem 0.15rem 0.5rem;
+	padding: 0.875rem;
+	border-radius: 1rem;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
+
+	@media only screen and (min-width: 768px) {
+		margin: 2rem 1rem 1rem;
+		padding: 1.125rem;
+	}
+
+	&__title {
+		font-size: 1rem;
+		letter-spacing: -0.05rem;
+		text-transform: capitalize;
+	}
+
+	&__title,
+	&__subtitle {
+		width: 11.75rem;
+  	overflow: hidden;
+		color: #3b3a3a;
+		white-space: nowrap;
+  	text-overflow: ellipsis;
+	}
+
+	&__subtitle {
+		font-weight: 200;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+	}
+
+	&__image {
+		width: 12rem;
+		height: 12rem;
+		margin: 0.75rem 0 0;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		margin: 0.75rem 0 0;
+	}
+}
+
+.card-list {
+	width: 100%;
+	padding: 1.5rem 1rem 0 1rem;
+
+	@media only screen and (min-width: 768px) {
+		padding: 2rem 2rem 0 2rem;
+	}
+
+	&__section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		color: #d6d4d4;
+	}
+
+	&__carousel-wrapper {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	&__section-title {
+		margin: 0 0.5rem 0 0;
+		font-weight: 800;
+		font-size: 0.75rem;
+		letter-spacing: 0.05rem;
+		text-transform: uppercase;
+
+		@media only screen and (min-width: 768px) {
+			margin: 0 1.5rem 0 0;
+			font-size: 0.875rem;
+		}
+	}
+	
+	&__section-separator {
+		display: flex;
+		flex-grow: 1;
+		height: 0.125rem;
+		background-color: #f3f3f3;
+		border-radius: 1rem;
+	}
+
+	&__items {
+		display: flex;
+    transition: all 250ms linear;
+	}
+}

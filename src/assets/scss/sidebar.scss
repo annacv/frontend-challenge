@@ -1,0 +1,114 @@
+.header {
+	width: 20%;
+	min-height: 100vh;
+	padding: 2rem 0;
+	background-color: #660d66;
+	
+	@media only screen and (min-width: 768px) {
+		width: 10%;
+	}
+	
+	@media only screen and (min-width: 1024px) {
+		width: 16%;
+		padding: 4rem 0;
+	}
+
+	&__brand {
+		display: flex;
+		flex-flow: column wrap;
+		align-content: center;
+		margin-bottom: 2rem;
+		text-align: center;
+
+		@media only screen and (min-width: 1024px) {
+			margin-bottom: 4rem;
+		}
+
+		&--icon-container {
+			width: 3rem;
+			margin: 0 0 1rem 0;
+			padding: 0.75rem 0;
+			background-color: #000;
+			border-radius: 3rem;
+
+			@media only screen and (min-width: 1900px) {
+				width: 5rem;
+				height: 5rem;
+				padding: 1.5rem 0;
+			}
+		}
+
+		&--icon {
+			color: #fff;
+			font-size: 1.5rem;
+
+			@media only screen and (min-width: 1900px) {
+				font-size: 2rem;
+			}
+		}
+
+		&--name {
+			color: #fff;
+			font-weight: 400;
+			font-size: 0.75rem;
+			text-transform: none;
+
+			@media only screen and (min-width: 1900px) {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+.sidebar {
+	&__list {
+		list-style-type: none;
+	}
+
+	&__list-item {
+		padding: 1.5rem 0;
+		color: #fff;
+		text-align: center;
+
+		&:hover {
+			color: #f8ddf7;
+			background: linear-gradient(
+				90deg,
+				rgba(114, 14, 114, 1) 0%,
+				rgba(114, 14, 114, 0.5368522408963585) 35%,
+				rgba(114, 14, 114, 0.304359243697479) 100%
+			);
+		}
+
+		&--icon {
+			color: inherit;
+
+			&:hover {
+				color: inherit;
+			}
+
+			@media only screen and (min-width: 1024px) {
+				margin-right: 1rem;
+			}
+		}
+
+		&--text {
+			display:none;
+
+			@media only screen and (min-width: 1024px) {
+				display: flex;
+			}
+		}
+
+		&--link {
+			display: inline-flex;
+			align-content: center;
+			color: inherit;
+			font-weight: 400;
+
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.dialog,
+.dialog__head,
+.dialog__actions {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	width: 100%;
+}
+
+.dialog {
+	margin: 4rem 0 0;
+
+	&__head-icon {
+		margin: 0 0 2rem;
+		font-size: 6rem;
+
+		&--info {
+			color: #660d66;
+			transform: rotate(270deg);
+		}
+
+		&--error {
+			margin: 0.5rem 0 0.5rem;
+			color: #000;
+			transform: rotate(180deg);
+		}
+
+		&--loading {
+			margin: 6rem 0 0.5rem;
+			color: #fb8500;
+			transform: rotate(200deg);
+		}
+	}
+
+	&__head-title {
+		margin: 0 0 0.5rem;
+		font-weight: 200;
+	}
+
+	&__subtitle {
+		margin: 0 0 2rem;
+	}
+}

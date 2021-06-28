@@ -1,0 +1,72 @@
+.btn {
+	font: inherit;
+	font-weight: 600;
+	background-color: #fff;
+	border: none;
+	border-radius: 1rem;
+	cursor: pointer;
+
+	&:hover {
+		color: #fff;
+	}
+
+	&__default {
+		padding: 0.5rem 1rem;
+		color: #660d66;
+		border: 1px solid #660d66;
+
+		&:hover {
+			font-weight: 400;
+			letter-spacing: 0.025rem;
+			background-color: #660d66;
+		}
+	}
+
+	&__play {
+		color: #331fa8;
+		border: 1px solid #331fa8;
+		border-radius: 2rem;
+
+		&--icon {
+			margin: 0.5rem 0.1rem 0.5rem 0.25rem;
+		}
+
+		&:hover {
+			background-color: #331fa8;
+		}
+	}
+
+	&__favorite {
+		color: #878787;
+
+		&:hover {
+			color: #f30808;
+		}
+
+		&--is-favorite {
+			color: #f30808;
+
+			&:hover {
+				color: #a10546;
+			}
+		}
+	}
+
+	&__left,
+	&__right {
+		color: #660d66;
+
+		&:hover {
+			color: #331fa8;
+		}
+
+		&--disabled {
+			color: #d6d4d4;
+			cursor: none;
+			
+			&:hover {
+				color: #d6d4d4;
+			}
+		}
+	}
+}
