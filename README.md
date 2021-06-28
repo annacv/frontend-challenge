@@ -3,9 +3,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It's a simple music directory that shows Spotify's weekly new releases, featured playlists and genres. Users can play new releases and mark them as favorites, and browse to Spotify website to reach more details about playlists and available genres.
 
-## Git
+## Deploy
 URl live:
-[Link Deploy](https://annacv.github.io/umusic/)
+[umusic](https://u-umusic.web.app/)
 
 ## Available Scripts
 
