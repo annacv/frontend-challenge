@@ -18,13 +18,15 @@ const FavoritesPage = () => {
 
 	if (musicCtxt.totalFavorites === 0) {
 		content = (
-			<Dialog
-				className="info"
-				title="You got no favorites yet"
-				subtitle="Start adding some !"
-				label="Add favorites"
-				onClick={browseHandler}
-			/>
+			<section role="dialog">
+				<Dialog
+					className="info"
+					title="You got no favorites yet"
+					subtitle="Start adding some !"
+					label="Add favorites"
+					onClick={browseHandler}
+				/>
+			</section>
 		);
 	} else {
 		content = <CardList section="Your tunes" actions={true} data={musicCtxt.favorites} show={4} />;
@@ -32,10 +34,10 @@ const FavoritesPage = () => {
 
 	return (
 		<>
-			<section className="app__page-section">
+			<div className="app__page-section">
 				<h1 className="app__page-title">favoriteTunes</h1>
-				{content}
-			</section>
+				<section role="contentinfo">{content}</section>
+			</div>
 			{isPlaying && musicCtxt.totalFavorites && <Player data={track}/>}
 		</>
 	);

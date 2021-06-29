@@ -3,7 +3,7 @@ import Icon from '../Icon.js';
 
 const Sidebar = () => {
 	return (
-		<nav className="sidebar">
+		<nav className="sidebar" role="navigation">
 			<ul className="sidebar__list">
 				<li className="sidebar__list-item">
 					<Link to="/" className="sidebar__list-item--link">

@@ -1,8 +1,8 @@
 const Player = (props) => {
 	const {data} = props;
-	
 	return (
 		<div className="player" data={data}>
+			{data}
 			{data.map((item, i) => {
 					return <iframe
 							key={i}

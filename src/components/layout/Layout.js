@@ -14,7 +14,7 @@ const Layout = (props) => {
 				</div>
 				<Sidebar />
 			</header>
-			<main className="app__main">
+			<main className="app__main" role="main">
 				<Background />
 				{props.children}
 			</main>

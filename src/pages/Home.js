@@ -4,7 +4,7 @@ import MusicContext from '../store/music-context';
 import CardList from 'components/CardList'
 import Player from 'components/Player'
 
-const HomePage = (props) => {
+const HomePage = () => {
 	const [newReleases, setNewReleases] = useState([])
 	const [featuredPlaylists, setFeaturedPlaylists] = useState([])
 	const [categories, setCategories] = useState([]);
@@ -40,12 +40,12 @@ const HomePage = (props) => {
 
 	return (
 			<>
-				<section className="app__page-section">
+				<div className="app__page-section">
 					<h1 className="app__page-title">featuredTunes</h1>
-					<CardList section="Released this week" actions={true} data={newReleases}/>
-					<CardList section="Featured Playlists" data={featuredPlaylists}/>
-					<CardList section="Browse" data={categories}/>
-				</section>
+					<section role="contentinfo"><CardList section="Released this week" actions={true} data={newReleases}/></section>
+					<section role="contentinfo"><CardList section="Featured Playlists" data={featuredPlaylists}/></section>
+					<section role="contentinfo"><CardList section="Browse" data={categories}/></section>
+				</div>
 				{isPlaying && <Player data={track}/>}
 			</>
 

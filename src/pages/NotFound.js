@@ -10,16 +10,18 @@ const NotFoundPage = () => {
 	}
 
 	return (
-		<section className="app__page-section">
+		<div className="app__page-section">
 			<h1 className="app__page-title">Oops!</h1>
-			<Dialog
-				className="error"
-				title="Error 404"
-				subtitle="Page not found :/"
-				label="Go back!"
-				onClick={browseHandler}
-			/>
-		</section>
+			<section role="dialog">
+				<Dialog
+					className="error"
+					title="Error 404"
+					subtitle="Page not found :/"
+					label="Go back!"
+					onClick={browseHandler}
+				/>
+			</section>
+		</div>
 	);
 }
 

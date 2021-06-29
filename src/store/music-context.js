@@ -65,7 +65,8 @@ export const MusicContextProvider = (props) => {
   };
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000)
+    const loading = setTimeout(() => setIsLoading(false), 1000)
+    return () => clearTimeout(loading);
   },[])
 
   if (isLoading) {
