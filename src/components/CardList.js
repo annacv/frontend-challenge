@@ -60,7 +60,6 @@ const CardList = (props) => {
 						style={{ transform: `translateX(-${currentIndex * 100 }%)` }}
 					>
 						{data.map((item, i) => {
-							console.log(item)
 							if (!item.url) {
 								return (
 									<Card 

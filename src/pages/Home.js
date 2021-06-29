@@ -13,22 +13,22 @@ const HomePage = () => {
 	const [isPlaying] = useState([]);
 	const track = musicCtxt.selectedTrack
 
-	const generalMap = (item) => {
-		if (item.type === "playlist") {
-			return {
-				id: item.id,
-				name: item.name,
-				image: item.images?.[0]?.url,
-				artists: item.artists?.map(artist => artist.name).join(', '),
-				url: item.external_urls
-			}
-		} else {
-			return {
-				id: item.id,
-				name: item.name,
-				image: item.images?.[0]?.url,
-				artists: item.artists?.map(artist => artist.name).join(', ')
-			}
+	const releasesMap = (item) => {
+		return {
+			id: item.id,
+			name: item.name,
+			image: item.images?.[1]?.url,
+			artists: item.artists?.map(artist => artist.name).join(', ')
+		}
+	}
+
+	const playlistsMap = (item) => {
+		return {
+			id: item.id,
+			name: item.name,
+			image: item.images?.[0]?.url,
+			artists: item.artists?.map(artist => artist.name).join(', '),
+			url: item.external_urls
 		}
 	} 
 
@@ -42,9 +42,9 @@ const HomePage = () => {
 	}
 
 	useEffect(() => {
+		musicService.getNewReleases().then(({albums: { items }}) => setNewReleases(items.map(releasesMap)))
+		musicService.getFeaturedPlayists().then(({playlists: { items }}) => setFeaturedPlaylists(items.map(playlistsMap)))
 		musicService.getCategories().then(({categories: { items } }) => setCategories(items.map(categoriesMap)))
-		musicService.getNewReleases().then(({albums: { items }}) => setNewReleases(items.map(generalMap)))
-		musicService.getFeaturedPlayists().then(({playlists: { items }}) => setFeaturedPlaylists(items.map(generalMap)))
 	}, [])
 
 	return (
@@ -57,7 +57,6 @@ const HomePage = () => {
 				</div>
 				{isPlaying && <Player data={track}/>}
 			</>
-
 	);
 }
 
