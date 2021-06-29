@@ -14,12 +14,21 @@ const HomePage = () => {
 	const track = musicCtxt.selectedTrack
 
 	const generalMap = (item) => {
-		return {
-			id: item.id,
-			name: item.name,
-			image: item.images?.[0]?.url,
-			artists: item.artists?.map(artist => artist.name).join(', '),
-			url: item.type === "playlist" ? item.external_urls : null
+		if (item.type === "playlist") {
+			return {
+				id: item.id,
+				name: item.name,
+				image: item.images?.[0]?.url,
+				artists: item.artists?.map(artist => artist.name).join(', '),
+				url: item.external_urls
+			}
+		} else {
+			return {
+				id: item.id,
+				name: item.name,
+				image: item.images?.[0]?.url,
+				artists: item.artists?.map(artist => artist.name).join(', ')
+			}
 		}
 	} 
 

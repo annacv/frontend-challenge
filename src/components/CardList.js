@@ -60,7 +60,19 @@ const CardList = (props) => {
 						style={{ transform: `translateX(-${currentIndex * 100 }%)` }}
 					>
 						{data.map((item, i) => {
-							if (item.href !== null || item.href !== undefined || item.url !== null || item.url !== undefined) {
+							console.log(item)
+							if (!item.url) {
+								return (
+									<Card 
+										key={i} 
+										actions={props.actions} 
+										id={item.id} 
+										title={item.name} 
+										subtitle={item.artists} 
+										image={item.image}
+									/>
+								);
+							} else {
 								return (
 									<a 
 										key={i} 
@@ -77,16 +89,6 @@ const CardList = (props) => {
 											image={item.image}
 										/>
 									</a>
-								);
-							} else {
-								return (
-									<Card 
-										actions={props.actions} 
-										id={item.id} 
-										title={item.name} 
-										subtitle={item.artists} 
-										image={item.image}
-									/>
 								);
 							}
 						})}
